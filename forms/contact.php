@@ -34,6 +34,8 @@
   // $contact->cc = array('ccreceiver1@example.com', 'ccreceiver2@example.com');
   // $contact->bcc = array('bccreceiver1@example.com', 'bccreceiver2@example.com');
 
+  // Reference: https://bootstrapmade.com/php-email-form/
+
   $contact->honeypot = $_POST['first_name'];
   echo $contact->send();
 ?>
