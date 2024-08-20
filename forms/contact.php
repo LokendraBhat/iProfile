@@ -1,9 +1,4 @@
 <?php
-  /**
-  * Requires the "PHP Email Form" library
-  */
-
-  // Replace contact@example.com with your real receiving email address
   $receiving_email_address = 'lokendrabhat.2022@gmail.com';
 
   if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
@@ -34,5 +29,11 @@
   $contact->add_message( $_POST['email'], 'Email');
   $contact->add_message( $_POST['message'], 'Message', 10);
 
+  
+  // You can also add multiple receiving email addresses for the submitted forms via cc and bcc methods.
+  // $contact->cc = array('ccreceiver1@example.com', 'ccreceiver2@example.com');
+  // $contact->bcc = array('bccreceiver1@example.com', 'bccreceiver2@example.com');
+
+  $contact->honeypot = $_POST['first_name'];
   echo $contact->send();
 ?>
