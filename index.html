@@ -1309,6 +1309,7 @@
         return;
       }
 
+      // Hide all messages initially
       thisForm.querySelector('.loading').classList.add('d-block');
       thisForm.querySelector('.error-message').classList.remove('d-block');
       thisForm.querySelector('.sent-message').classList.remove('d-block');
@@ -1322,27 +1323,30 @@
       })
         .then(response => response.json())  // Parse JSON response
         .then(data => {
+          // Hide loading indicator
+          thisForm.querySelector('.loading').classList.remove('d-block');
+
           if (data.next) {
             // Handle successful form submission
             if (data.next.includes('/thanks')) {
-              thisForm.querySelector('.loading').classList.remove('d-block');
               thisForm.querySelector('.sent-message').classList.add('d-block');
               thisForm.reset();
             } else {
-              throw new Error('Unexpected URL redirection');
+              displayError(thisForm, 'Unexpected URL redirection');
             }
           } else {
-            throw new Error('Form submission failed');
+            displayError(thisForm, 'Form submission failed');
           }
         })
         .catch((error) => {
+          // Hide loading indicator
+          thisForm.querySelector('.loading').classList.remove('d-block');
           displayError(thisForm, error.message || 'An unexpected error occurred.');
         });
     });
   });
 
   function displayError(thisForm, error) {
-    thisForm.querySelector('.loading').classList.remove('d-block');
     thisForm.querySelector('.error-message').innerHTML = error;
     thisForm.querySelector('.error-message').classList.add('d-block');
   }
