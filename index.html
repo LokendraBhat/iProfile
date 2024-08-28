@@ -4,14 +4,9 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Lokendra Bhat - MyPortfolio</title>
-    <meta
-      name="description"
-      content="Welcome to the portfolio of Lokendra Bhat, showcasing my work in cloud computing, DevOps, and web development. Explore my projects, skills, and experience."
-    />
-    <meta
-      name="keywords"
-      content="Lokendra Bhat, portfolio, cloud computing, DevOps, web development, technology, programming, projects"
-    />
+    <meta name="description" content="Welcome to the portfolio of Lokendra Bhat, showcasing my work in cloud computing, DevOps, and web development. Explore my projects, skills, and experience." />
+    <meta name="keywords" content="Lokendra Bhat, portfolio, cloud computing, DevOps, web development, technology, programming, projects" />
+    
 
     <!-- Security Headers -->
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self';"> -->
@@ -74,24 +69,17 @@
 
       <div class="social-links text-center">
         <!-- <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a> -->
-        <a
-          href="https://www.facebook.com/lokendra.bhat.90/"
-          class="facebook"
-          target="_blank"
+        <a href="https://www.facebook.com/lokendra.bhat.90/" class="facebook" target="_blank"
           ><i class="bi bi-facebook"></i
         ></a>
-        <a
-          href="https://www.instagram.com/lokendrabhat/"
-          class="instagram"
-          target="_blank"
+        <a href="https://www.instagram.com/lokendrabhat/" class="instagram" target="_blank"
           ><i class="bi bi-instagram"></i
         ></a>
         <a href="https://github.com/lokendrabhat" class="github" target="_blank"
           ><i class="bi bi-github"></i
         ></a>
         <a
-          href="https://www.linkedin.com/in/lokendra-bhat-bb2b6b24a/"
-          target="_blank"
+          href="https://www.linkedin.com/in/lokendra-bhat-bb2b6b24a/" target="_blank"
           class="linkedin"
           ><i class="bi bi-linkedin"></i
         ></a>
@@ -1180,13 +1168,10 @@
                 data-aos-delay="200"
               >
 	      -->
-              <form
-                action="https://formspree.io/f/xgvwdzoa"
-                method="POST"
-                class="php-email-form"
-                data-aos="fade-up"
-                data-aos-delay="200"
-              >
+	      <form action="https://formspree.io/f/xgvwdzoa" method="POST" class="php-email-form"
+        data-aos="fade-up"
+        data-aos-delay="200"
+        >
                 <div class="row gy-4">
                   <div class="col-md-6">
                     <label for="name-field" class="pb-2">Your Name</label>
@@ -1308,84 +1293,72 @@
       document.getElementById("age").innerText = calculateAge(dob);
 
       (function () {
-        "use strict";
+  "use strict";
 
-        let forms = document.querySelectorAll(".php-email-form");
+  let forms = document.querySelectorAll('.php-email-form');
 
-        forms.forEach(function (e) {
-          e.addEventListener("submit", function (event) {
-            event.preventDefault();
+  forms.forEach(function (e) {
+    e.addEventListener('submit', function (event) {
+      event.preventDefault();
 
-            let thisForm = this;
-            let action = thisForm.getAttribute("action");
+      let thisForm = this;
+      let action = thisForm.getAttribute('action');
 
-            if (!action) {
-              displayError(thisForm, "The form action property is not set!");
-              return;
+      if (!action) {
+        displayError(thisForm, 'The form action property is not set!');
+        return;
+      }
+
+      // Hide all messages initially
+      thisForm.querySelector('.loading').classList.add('d-block');
+      thisForm.querySelector('.error-message').classList.remove('d-block');
+      thisForm.querySelector('.sent-message').classList.remove('d-block');
+
+      let formData = new FormData(thisForm);
+
+      fetch(action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'X-Requested-With': 'XMLHttpRequest' }
+      })
+        .then(response => {
+          console.log('Response:', response);
+          if (response.ok) {
+            return response.json();  // Parse JSON if response is OK
+          } else {
+            throw new Error(`${response.status} ${response.statusText}`);
+          }
+        })
+        .then(data => {
+          console.log('Data:', data);
+          thisForm.querySelector('.loading').classList.remove('d-block');
+
+          if (data && data.next) {
+            if (data.next.includes('/thanks')) {
+              thisForm.querySelector('.sent-message').classList.add('d-block');
+              thisForm.reset();
+            } else {
+              thisForm.querySelector('.sent-message').classList.remove('d-block');
             }
-
-            // Hide all messages initially
-            thisForm.querySelector(".loading").classList.add("d-block");
-            thisForm
-              .querySelector(".error-message")
-              .classList.remove("d-block");
-            thisForm.querySelector(".sent-message").classList.remove("d-block");
-
-            let formData = new FormData(thisForm);
-
-            fetch(action, {
-              method: "POST",
-              body: formData,
-              headers: { "X-Requested-With": "XMLHttpRequest" },
-            })
-              .then((response) => {
-                if (response.ok) {
-                  return response.json(); // Parse JSON if response is OK
-                } else {
-                  throw new Error(`${response.status} ${response.statusText}`);
-                }
-              })
-              .then((data) => {
-                // Hide loading indicator
-                thisForm.querySelector(".loading").classList.remove("d-block");
-
-                if (data && data.next) {
-                  // Check if the redirection URL contains '/thanks'
-                  if (data.next.includes("/thanks")) {
-                    thisForm
-                      .querySelector(".sent-message")
-                      .classList.add("d-block");
-                    thisForm.reset();
-                  } else {
-                    // Hide success and error messages if unexpected URL
-                    thisForm
-                      .querySelector(".sent-message")
-                      .classList.remove("d-block");
-                  }
-                } else {
-                  // Hide success message if no data.next
-                  thisForm
-                    .querySelector(".sent-message")
-                    .classList.remove("d-block");
-                }
-              })
-              .catch(() => {
-                // Hide loading indicator
-                thisForm.querySelector(".loading").classList.remove("d-block");
-
-                // Always hide error message
-                thisForm
-                  .querySelector(".error-message")
-                  .classList.remove("d-block");
-              });
-          });
+          } else {
+            thisForm.querySelector('.sent-message').classList.remove('d-block');
+          }
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+          thisForm.querySelector('.loading').classList.remove('d-block');
+          thisForm.querySelector('.error-message').classList.remove('d-block');
         });
+    });
+  });
 
-        // function displayError(thisForm, error) {
-        //   thisForm.querySelector(".error-message").innerHTML = error;
-        //   thisForm.querySelector(".error-message").classList.add("d-block");
-        // }
-      })();
+  function displayError(thisForm, error) {
+    thisForm.querySelector('.error-message').innerHTML = error;
+    thisForm.querySelector('.error-message').classList.add('d-block');
+  }
+
+})();
+
     </script>
   </body>
 </html>
