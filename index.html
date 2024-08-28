@@ -1321,13 +1321,19 @@
         body: formData,
         headers: { 'X-Requested-With': 'XMLHttpRequest' }
       })
-        .then(response => response.json())  // Parse JSON response
+        .then(response => {
+          if (response.ok) {
+            return response.json();  // Parse JSON if response is OK
+          } else {
+            throw new Error(`${response.status} ${response.statusText}`);
+          }
+        })
         .then(data => {
           // Hide loading indicator
           thisForm.querySelector('.loading').classList.remove('d-block');
 
-          if (data.next) {
-            // Handle successful form submission
+          if (data && data.next) {
+            // Check if the redirection URL contains '/thanks'
             if (data.next.includes('/thanks')) {
               thisForm.querySelector('.sent-message').classList.add('d-block');
               thisForm.reset();
