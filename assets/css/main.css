@@ -72,25 +72,25 @@ body {
 /* Cursor trail effect with neon glow */
 .trail {
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
+  background: rgba(0, 255, 255, 0.8);  /* Neon color for the trail */
+  /* Make it circular */
+  /* border-radius: 50%; */
+  /* For Star Shape uncomment following*/
   clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%,
       79% 91%, 50% 70%, 21% 91%, 32% 57%,
       2% 35%, 39% 35%);
-  /* Star shape */
-  background: transparent;
-  /* Background color added dynamically via JS */
   pointer-events: none;
   opacity: 0.9;
-  animation: fadeOut 1s ease-out forwards;
-  transform: translate(-50%, -50%);
+  animation: fadeOut 3s ease-out forwards;
   z-index: 1000;
   /* Ensure it stays above all content */
 
-  /* Default neon effect */
+  /* Neon glow effect */
   box-shadow: 0 0 8px rgba(0, 255, 255, 0.8),
-    0 0 15px rgba(0, 255, 255, 0.5),
-    0 0 25px rgba(0, 255, 255, 0.3);
+    0 0 15px rgba(0, 255, 255, 0.6),
+    0 0 25px rgba(201, 204, 204, 0.4);
 }
 
 /* Fade-out animation for the trail */
@@ -98,15 +98,11 @@ body {
   0% {
     opacity: 0.9;
     transform: scale(1);
-    box-shadow: 0 0 10px rgba(0, 255, 255, 1),
-      0 0 20px rgba(0, 255, 255, 0.8),
-      0 0 30px rgba(0, 255, 255, 0.6);
   }
 
   100% {
     opacity: 0;
     transform: scale(0);
-    box-shadow: 0 0 2px rgba(0, 255, 255, 0.1);
   }
 }
 
