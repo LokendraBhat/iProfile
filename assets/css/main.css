@@ -83,7 +83,7 @@ body {
       2% 35%, 39% 35%);
   pointer-events: none;
   opacity: 0.9;
-  animation: fadeOut 3s ease-out forwards;
+  animation: fadeOut 2s ease-out forwards;
   z-index: 1000;
   /* Ensure it stays above all content */
 
