@@ -4,9 +4,14 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Lokendra Bhat - MyPortfolio</title>
-    <meta name="description" content="Welcome to the portfolio of Lokendra Bhat, showcasing my work in cloud computing, DevOps, and web development. Explore my projects, skills, and experience." />
-    <meta name="keywords" content="Lokendra Bhat, portfolio, cloud computing, DevOps, web development, technology, programming, projects" />
-    
+    <meta
+      name="description"
+      content="Welcome to the portfolio of Lokendra Bhat, showcasing my work in cloud computing, DevOps, and web development. Explore my projects, skills, and experience."
+    />
+    <meta
+      name="keywords"
+      content="Lokendra Bhat, portfolio, cloud computing, DevOps, web development, technology, programming, projects"
+    />
 
     <!-- Security Headers -->
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self';"> -->
@@ -69,23 +74,28 @@
 
       <div class="social-links text-center">
         <!-- <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a> -->
-        <a href="https://www.facebook.com/lokendra.bhat.90/" class="facebook" target="_blank"
+        <a
+          href="https://www.facebook.com/lokendra.bhat.90/"
+          class="facebook"
+          target="_blank"
           ><i class="bi bi-facebook"></i
         ></a>
-        <a href="https://www.instagram.com/lokendrabhat/" class="instagram" target="_blank"
+        <a
+          href="https://www.instagram.com/lokendrabhat/"
+          class="instagram"
+          target="_blank"
           ><i class="bi bi-instagram"></i
         ></a>
         <a href="https://github.com/lokendrabhat" class="github" target="_blank"
           ><i class="bi bi-github"></i
         ></a>
         <a
-          href="https://www.linkedin.com/in/lokendra-bhat-bb2b6b24a/" target="_blank"
+          href="https://www.linkedin.com/in/lokendra-bhat-bb2b6b24a/"
+          target="_blank"
           class="linkedin"
           ><i class="bi bi-linkedin"></i
         ></a>
-	      <a
-          href="https://blog.lokendrabhat.com.np" target="_blank"
-          class="blog"
+        <a href="https://blog.lokendrabhat.com.np" target="_blank" class="blog"
           ><i class="bi bi-vector-pen"></i
         ></a>
       </div>
@@ -760,10 +770,13 @@
                 data-aos-delay="200"
               >
 	      -->
-	      <form action="https://formspree.io/f/xgvwdzoa" method="POST" class="php-email-form"
-        data-aos="fade-up"
-        data-aos-delay="200"
-        >
+              <form
+                action="https://formspree.io/f/xgvwdzoa"
+                method="POST"
+                class="php-email-form"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
                 <div class="row gy-4">
                   <div class="col-md-6">
                     <label for="name-field" class="pb-2">Your Name</label>
@@ -884,72 +897,113 @@
       document.getElementById("age").innerText = calculateAge(dob);
 
       (function () {
-  "use strict";
+        "use strict";
 
-  let forms = document.querySelectorAll('.php-email-form');
+        let forms = document.querySelectorAll(".php-email-form");
 
-  forms.forEach(function (e) {
-    e.addEventListener('submit', function (event) {
-      event.preventDefault();
+        forms.forEach(function (e) {
+          e.addEventListener("submit", function (event) {
+            event.preventDefault();
 
-      let thisForm = this;
-      let action = thisForm.getAttribute('action');
+            let thisForm = this;
+            let action = thisForm.getAttribute("action");
 
-      if (!action) {
-        displayError(thisForm, 'The form action property is not set!');
-        return;
+            if (!action) {
+              displayError(thisForm, "The form action property is not set!");
+              return;
+            }
+
+            // Hide all messages initially
+            thisForm.querySelector(".loading").classList.add("d-block");
+            thisForm
+              .querySelector(".error-message")
+              .classList.remove("d-block");
+            thisForm.querySelector(".sent-message").classList.remove("d-block");
+
+            let formData = new FormData(thisForm);
+
+            fetch(action, {
+              method: "POST",
+              body: formData,
+              headers: { "X-Requested-With": "XMLHttpRequest" },
+            })
+              .then((response) => {
+                console.log("Response:", response);
+                if (response.ok) {
+                  return response.json(); // Parse JSON if response is OK
+                } else {
+                  throw new Error(`${response.status} ${response.statusText}`);
+                }
+              })
+              .then((data) => {
+                console.log("Data:", data);
+                thisForm.querySelector(".loading").classList.remove("d-block");
+
+                if (data && data.next) {
+                  if (data.next.includes("/thanks")) {
+                    thisForm
+                      .querySelector(".sent-message")
+                      .classList.add("d-block");
+                    thisForm.reset();
+                  } else {
+                    thisForm
+                      .querySelector(".sent-message")
+                      .classList.remove("d-block");
+                  }
+                } else {
+                  thisForm
+                    .querySelector(".sent-message")
+                    .classList.remove("d-block");
+                }
+              })
+              .catch((error) => {
+                console.error("Error:", error);
+                thisForm.querySelector(".loading").classList.remove("d-block");
+                thisForm
+                  .querySelector(".error-message")
+                  .classList.remove("d-block");
+              });
+          });
+        });
+
+        function displayError(thisForm, error) {
+          thisForm.querySelector(".error-message").innerHTML = error;
+          thisForm.querySelector(".error-message").classList.add("d-block");
+        }
+      })();
+
+      // Array of neon colors
+      const neonColors = [
+        "rgba(0, 255, 255, 1)", // Cyan
+        "rgba(255, 0, 255, 1)", // Magenta
+        "rgba(0, 255, 0, 1)", // Green
+        "rgba(255, 255, 0, 1)", // Yellow
+      ];
+
+      // Function to get a random neon color
+      function getRandomNeonColor() {
+        return neonColors[Math.floor(Math.random() * neonColors.length)];
       }
 
-      // Hide all messages initially
-      thisForm.querySelector('.loading').classList.add('d-block');
-      thisForm.querySelector('.error-message').classList.remove('d-block');
-      thisForm.querySelector('.sent-message').classList.remove('d-block');
+      document.addEventListener("mousemove", (e) => {
+        const trail = document.createElement("div");
+        trail.className = "trail";
 
-      let formData = new FormData(thisForm);
+        // Apply random neon color
+        const color = getRandomNeonColor();
+        trail.style.background = color;
+        trail.style.boxShadow = `0 0 8px ${color}, 
+                             0 0 15px ${color}, 
+                             0 0 25px ${color}`;
 
-      fetch(action, {
-        method: 'POST',
-        body: formData,
-        headers: { 'X-Requested-With': 'XMLHttpRequest' }
-      })
-        .then(response => {
-          console.log('Response:', response);
-          if (response.ok) {
-            return response.json();  // Parse JSON if response is OK
-          } else {
-            throw new Error(`${response.status} ${response.statusText}`);
-          }
-        })
-        .then(data => {
-          console.log('Data:', data);
-          thisForm.querySelector('.loading').classList.remove('d-block');
+        // Position the trail at cursor location
+        trail.style.left = `${e.pageX}px`;
+        trail.style.top = `${e.pageY}px`;
 
-          if (data && data.next) {
-            if (data.next.includes('/thanks')) {
-              thisForm.querySelector('.sent-message').classList.add('d-block');
-              thisForm.reset();
-            } else {
-              thisForm.querySelector('.sent-message').classList.remove('d-block');
-            }
-          } else {
-            thisForm.querySelector('.sent-message').classList.remove('d-block');
-          }
-        })
-        .catch((error) => {
-          console.error('Error:', error);
-          thisForm.querySelector('.loading').classList.remove('d-block');
-          thisForm.querySelector('.error-message').classList.remove('d-block');
-        });
-    });
-  });
-
-  function displayError(thisForm, error) {
-    thisForm.querySelector('.error-message').innerHTML = error;
-    thisForm.querySelector('.error-message').classList.add('d-block');
-  }
-
-})();
-
+        // Append the trail and remove after animation
+        document.body.appendChild(trail);
+        setTimeout(() => trail.remove(), 1000);
+      });
     </script>
   </body>
 </html>
