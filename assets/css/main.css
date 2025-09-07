@@ -72,8 +72,8 @@ body {
 /* Cursor trail effect with neon glow */
 .trail {
   position: absolute;
-  width: 15px;
-  height: 15px;
+  width: 7px;
+  height: 7px;
   background: rgba(0, 255, 255, 0.8);  /* Neon color for the trail */
   /* Make it circular */
   /* border-radius: 50%; */
