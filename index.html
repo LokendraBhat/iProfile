@@ -82,7 +82,7 @@
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet" />
     
-    <!-- Google reCAPTCHA -->
+    <!-- Google reCAPTCHA v2 -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </head>
 
@@ -912,12 +912,19 @@
                     <div class="sent-message">
                       Your message has been sent. Thank you for reaching out!
                     </div>
-
-                    <!-- Add reCAPTCHA widget -->
-                    <div class="d-flex justify-content-center">
-                      <div class="g-recaptcha" data-sitekey="6LekdMErAAAAACmr22pP2rgRY5dJgFq5_AGj5jV9" data-theme="dark"></div>
+                    <!-- CAPTCHA UI for white theme -->
+                    <div class="card shadow-sm border mx-auto mb-3" style="max-width: 350px; background: #fff; border-radius: 12px;">
+                      <div class="card-body p-3">
+                        <div class="mb-2 text-center">
+                          <span class="d-inline-block" style="font-size: 1.2rem; color: #0d6efd;">
+                            <i class="bi bi-shield-lock"></i> CAPTCHA Verification
+                          </span>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                          <div class="g-recaptcha" data-sitekey="6Ld5gcErAAAAACY8vyO7cjqthM3mA1G0Zqr0kjmY" data-theme="light"></div>
+                        </div>
+                      </div>
                     </div>
-
                     <button type="submit">
                       <i class="bi bi-send me-2"></i>Send Message
                     </button>
@@ -937,7 +944,7 @@
         <div class="copyright text-center">
           <p>
             © <span>Copyright</span>
-            <strong class="px-1 sitename">MyPortfolio</strong>
+            <strong><span>Lokendra Bhat</span></strong>.
             <span>All Rights Reserved</span>
           </p>
         </div>
@@ -989,81 +996,58 @@
 
       (function () {
         "use strict";
-
         let forms = document.querySelectorAll(".php-email-form");
-
         forms.forEach(function (e) {
           e.addEventListener("submit", function (event) {
             event.preventDefault();
-
             let thisForm = this;
             let action = thisForm.getAttribute("action");
-
             if (!action) {
               displayError(thisForm, "The form action property is not set!");
               return;
             }
-
-            // Verify reCAPTCHA
+            // Verify reCAPTCHA v2
             const recaptchaResponse = grecaptcha.getResponse();
             if (!recaptchaResponse) {
               displayError(thisForm, "Please complete the reCAPTCHA verification!");
               return;
             }
-
             // Hide all messages initially
             thisForm.querySelector(".loading").classList.add("d-block");
-            thisForm
-              .querySelector(".error-message")
-              .classList.remove("d-block");
+            thisForm.querySelector(".error-message").classList.remove("d-block");
             thisForm.querySelector(".sent-message").classList.remove("d-block");
-
             let formData = new FormData(thisForm);
-
             fetch(action, {
               method: "POST",
               body: formData,
               headers: { "X-Requested-With": "XMLHttpRequest" },
             })
               .then((response) => {
-                console.log("Response:", response);
                 if (response.ok) {
-                  return response.json(); // Parse JSON if response is OK
+                  return response.json();
                 } else {
                   throw new Error(`${response.status} ${response.statusText}`);
                 }
               })
               .then((data) => {
-                console.log("Data:", data);
                 thisForm.querySelector(".loading").classList.remove("d-block");
-
                 if (data && data.next) {
                   if (data.next.includes("/thanks")) {
-                    thisForm
-                      .querySelector(".sent-message")
-                      .classList.add("d-block");
+                    thisForm.querySelector(".sent-message").classList.add("d-block");
                     thisForm.reset();
                   } else {
-                    thisForm
-                      .querySelector(".sent-message")
-                      .classList.remove("d-block");
+                    thisForm.querySelector(".sent-message").classList.remove("d-block");
                   }
                 } else {
-                  thisForm
-                    .querySelector(".sent-message")
-                    .classList.remove("d-block");
+                  thisForm.querySelector(".sent-message").classList.remove("d-block");
                 }
               })
               .catch((error) => {
-                console.error("Error:", error);
                 thisForm.querySelector(".loading").classList.remove("d-block");
-                thisForm
-                  .querySelector(".error-message")
-                  .classList.remove("d-block");
+                thisForm.querySelector(".error-message").classList.remove("d-block");
               });
           });
         });
-
         function displayError(thisForm, error) {
           thisForm.querySelector(".error-message").innerHTML = error;
           thisForm.querySelector(".error-message").classList.add("d-block");
@@ -1074,8 +1058,8 @@
       const neonColors = [
         "rgba(0, 255, 255, 1)", // Cyan
         "rgba(255, 0, 255, 1)", // Magenta
-        "rgba(0, 255, 0, 1)", // Green
-        "rgba(255, 255, 0, 1)", // Yellow
+        "rgba(0, 255, 0", // Green
+        "rgba(255, 255, 0", // Yellow
       ];
 
       // Function to get a random neon color
