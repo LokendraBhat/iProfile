@@ -81,6 +81,9 @@
 
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet" />
+    
+    <!-- Google reCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </head>
 
   <body class="index-page">
@@ -732,8 +735,9 @@
         <div class="container section-title" data-aos="fade-up">
           <h2>Get in Touch</h2>
           <p>
-            If you have any questions or just want to connect, feel free to
-            reach out.
+            Let's collaborate on your next project! Whether you need DevOps expertise, 
+            cloud solutions, or just want to discuss technology, I'm here to help.
+            Feel free to reach out through the form below or connect with me on social media.
           </p>
         </div>
         <!-- End Section Title -->
@@ -751,6 +755,7 @@
                   <div>
                     <h3>Location</h3>
                     <p>Kathmandu, Nepal</p>
+                    <p class="text-muted">Available for remote work worldwide</p>
                   </div>
                 </div>
                 <!-- End Info Item -->
@@ -760,10 +765,11 @@
                   data-aos="fade-up"
                   data-aos-delay="300"
                 >
-                  <i class="bi bi-telephone flex-shrink-0"></i>
+                  <i class="bi bi-clock flex-shrink-0"></i>
                   <div>
-                    <h3>Phone</h3>
-                    <p>+977 980 123 4567</p>
+                    <h3>Working Hours</h3>
+                    <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                    <p class="text-muted">Flexible for different time zones</p>
                   </div>
                 </div>
                 <!-- End Info Item -->
@@ -811,45 +817,61 @@
               >
                 <div class="row gy-4">
                   <div class="col-md-6">
-                    <label for="name-field" class="pb-2">Your Name</label>
+                    <label for="name-field" class="pb-2"><i class="bi bi-person"></i> Your Name</label>
                     <input
                       type="text"
                       name="name"
                       id="name-field"
                       class="form-control"
+                      placeholder="Enter your full name"
                       required=""
                     />
                   </div>
 
                   <div class="col-md-6">
-                    <label for="email-field" class="pb-2">Your Email</label>
+                    <label for="email-field" class="pb-2"><i class="bi bi-envelope"></i> Your Email</label>
                     <input
                       type="email"
                       class="form-control"
                       name="email"
                       id="email-field"
+                      placeholder="abc@example.com"
                       required=""
                     />
                   </div>
 
                   <div class="col-md-12">
-                    <label for="subject-field" class="pb-2">Subject</label>
+                    <label for="subject-field" class="pb-2"><i class="bi bi-chat-text"></i> Subject</label>
                     <input
                       type="text"
                       class="form-control"
                       name="subject"
                       id="subject-field"
+                      placeholder="How can I help you?"
                       required=""
                     />
                   </div>
 
                   <div class="col-md-12">
-                    <label for="message-field" class="pb-2">Message</label>
+                    <label for="purpose-field" class="pb-2"><i class="bi bi-list-check"></i> Purpose</label>
+                    <select class="form-control" name="purpose" id="purpose-field" required="">
+                      <option value="">Select the purpose of your message</option>
+                      <option value="DevOps Consultation">DevOps Consultation</option>
+                      <option value="Cloud Architecture">Cloud Architecture</option>
+                      <option value="Job Opportunity">Job Opportunity</option>
+                      <option value="Collaboration">Project Collaboration</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+
+                  <div class="col-md-12">
+                    <label for="message-field" class="pb-2"><i class="bi bi-pencil"></i> Message</label>
                     <textarea
                       class="form-control"
                       name="message"
-                      rows="10"
+                      rows="6"
                       id="message-field"
+                      placeholder="Tell me about your project, requirements, or any questions you have..."
                       required=""
                     ></textarea>
                   </div>
@@ -860,6 +882,9 @@
                     <div class="sent-message">
                       Your message has been sent. Thank you for reaching out!
                     </div>
+
+                    <!-- Add reCAPTCHA widget -->
+                    <div class="g-recaptcha mb-3" data-sitekey="6LekdMErAAAAACmr22pP2rgRY5dJgFq5_AGj5jV9"></div>
 
                     <button type="submit">Send Message</button>
                   </div>
@@ -942,6 +967,13 @@
 
             if (!action) {
               displayError(thisForm, "The form action property is not set!");
+              return;
+            }
+
+            // Verify reCAPTCHA
+            const recaptchaResponse = grecaptcha.getResponse();
+            if (!recaptchaResponse) {
+              displayError(thisForm, "Please complete the reCAPTCHA verification!");
               return;
             }
 
