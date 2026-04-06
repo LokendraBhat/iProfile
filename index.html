@@ -1,1091 +1,1407 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Lokendra Bhat</title>
-    <meta
-      name="description"
-      content="Welcome to the portfolio of Lokendra Bhat, a skilled DevOps Engineer and AWS Certified professional, showcasing expertise in cloud computing, CI/CD, containerization, and automation. Explore my projects, skills, and experience."
-    />
-    <meta
-      name="keywords"
-      content="Lokendra Bhat, DevOps Engineer, AWS Certified, Cloud Computing, Docker, Jenkins, CI/CD, Kubernetes, Infrastructure as Code, DevOps Portfolio, SRE, Cloud Engineer, Nepal"
-    />
-    <!-- SEO Meta Tags -->
-    <meta name="author" content="Lokendra Bhat" />
-    <meta name="robots" content="index, follow" />
-    <meta name="language" content="English" />
-    <meta name="revisit-after" content="7 days" />
-    <meta name="generator" content="VS Code" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lokendra Bhat — DevOps Engineer</title>
+  <meta name="description" content="Portfolio of Lokendra Bhat, DevOps Engineer & AWS Certified Professional specializing in cloud infrastructure, CI/CD, and containerization." />
+  <meta name="keywords" content="Lokendra Bhat, DevOps Engineer, AWS Certified, Cloud Computing, Docker, Jenkins, CI/CD, Kubernetes, Nepal" />
+  <meta name="author" content="Lokendra Bhat" />
+  <meta name="robots" content="index, follow" />
 
-    <!-- Open Graph Meta Tags for Social Media -->
-    <meta property="og:title" content="Lokendra Bhat - DevOps Engineer & AWS Certified Professional" />
-    <meta property="og:description" content="Welcome to the portfolio of Lokendra Bhat, a skilled DevOps Engineer and AWS Certified professional, showcasing expertise in cloud computing, CI/CD, containerization, and automation." />
-    <meta property="og:image" content="assets/img/my-profile-img.jpg" />
-    <meta property="og:url" content="https://lokendrabhat.com.np" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Lokendra Bhat Portfolio" />
+  <meta property="og:title" content="Lokendra Bhat — DevOps Engineer & AWS Certified" />
+  <meta property="og:description" content="Portfolio of Lokendra Bhat, DevOps Engineer & AWS Certified Professional." />
+  <meta property="og:image" content="assets/img/my-profile-img.jpg" />
+  <meta property="og:url" content="https://lokendrabhat.com.np" />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://lokendrabhat.com.np" />
 
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Lokendra Bhat - DevOps Engineer & AWS Certified Professional" />
-    <meta name="twitter:description" content="Welcome to the portfolio of Lokendra Bhat, a skilled DevOps Engineer and AWS Certified professional, showcasing expertise in cloud computing, CI/CD, containerization, and automation." />
-    <meta name="twitter:image" content="assets/img/my-profile-img.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://lokendrabhat.com.np" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    <!-- Security Headers -->
-    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self';"> -->
-    <!-- <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta http-equiv="X-XSS-Protection" content="1; mode=block"> -->
-   
-    <!-- Google tag (gtag.js) -->
-     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P6ZXYTLBZ0"></script>
-     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+    :root {
+      --bg: #080c10;
+      --bg2: #0d1219;
+      --bg3: #111820;
+      --border: rgba(255,255,255,0.07);
+      --border-bright: rgba(99,202,183,0.3);
+      --text: #c8d4e0;
+      --text-dim: #5a7080;
+      --accent: #63cab7;
+      --accent2: #4a9fe8;
+      --accent3: #f0a05a;
+      --white: #eaf2f8;
+      --mono: 'Space Mono', monospace;
+      --sans: 'DM Sans', sans-serif;
+      --display: 'Syne', sans-serif;
+      --sidebar-w: 280px;
+      --transition: 0.25s cubic-bezier(0.4,0,0.2,1);
+    }
 
-      gtag('config', 'G-P6ZXYTLBZ0');
-    </script>
-    <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon" />
-    <link href="assets/img/icon/logo-black.png" rel="apple-touch-icon" />
+    html { scroll-behavior: smooth; }
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
 
-    <!-- Vendor CSS Files -->
-    <link
-      href="assets/vendor/bootstrap/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
-      rel="stylesheet"
-    />
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
-    <link
-      href="assets/vendor/glightbox/css/glightbox.min.css"
-      rel="stylesheet"
-    />
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    /* ─── Scrollbar ─── */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
 
-    <!-- Main CSS File -->
-    <link href="assets/css/main.css" rel="stylesheet" />
-    
-    <!-- Google reCAPTCHA v2 -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-  </head>
+    /* ─── Selection ─── */
+    ::selection { background: var(--accent); color: var(--bg); }
 
-  <body class="index-page">
-    <header id="header" class="header dark-background d-flex flex-column">
-      <i class="header-toggle d-xl-none bi bi-list"></i>
+    /* ─── Sidebar ─── */
+    #sidebar {
+      position: fixed;
+      top: 0; left: 0;
+      width: var(--sidebar-w);
+      height: 100vh;
+      background: var(--bg2);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      padding: 2.5rem 1.75rem;
+      z-index: 100;
+      overflow-y: auto;
+      transition: transform var(--transition);
+    }
 
-      <div class="profile-img">
-        <img
-          src="assets/img/icon/logo-color.png"
-          alt=""
-          class="img-fluid rounded-circle"
-        />
-      </div>
+    .sidebar-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 2.5rem;
+      text-decoration: none;
+    }
+    .sidebar-logo-mark {
+      width: 40px; height: 40px;
+      border: 2px solid var(--accent);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+    .sidebar-logo-name {
+      font-family: var(--display);
+      font-size: 1.05rem;
+      color: var(--white);
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    .sidebar-logo-name span { display: block; font-size: 0.65rem; color: var(--accent); font-family: var(--mono); font-weight: 400; letter-spacing: 0.12em; }
 
-      <a
-        href="index.html"
-        class="logo d-flex align-items-center justify-content-center"
-      >
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/icon/logo-no-background.png" alt=""> -->
-        <h1 class="sitename">Lokendra Bhat</h1>
-      </a>
+    nav ul { list-style: none; flex: 1; }
+    nav ul li { margin-bottom: 0.25rem; }
+    nav ul li a {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.6rem 0.85rem;
+      border-radius: 8px;
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      transition: all var(--transition);
+      position: relative;
+    }
+    nav ul li a i { font-size: 1rem; }
+    nav ul li a:hover, nav ul li a.active {
+      color: var(--white);
+      background: rgba(99,202,183,0.08);
+    }
+    nav ul li a.active { color: var(--accent); }
+    nav ul li a.active::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 50%;
+      transform: translateY(-50%);
+      width: 3px; height: 60%;
+      background: var(--accent);
+      border-radius: 0 2px 2px 0;
+    }
 
-      <div class="social-links text-center">
-        <!-- <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a> -->
-        <a
-          href="https://www.facebook.com/lokendra.bhat.90/"
-          class="facebook"
-          target="_blank"
-          ><i class="bi bi-facebook"></i
-        ></a>
-        <a
-          href="https://www.instagram.com/lokendrabhat/"
-          class="instagram"
-          target="_blank"
-          ><i class="bi bi-instagram"></i
-        ></a>
-        <a href="https://github.com/lokendrabhat" class="github" target="_blank"
-          ><i class="bi bi-github"></i
-        ></a>
-        <a
-          href="https://www.linkedin.com/in/lokendra-bhat-bb2b6b24a/"
-          target="_blank"
-          class="linkedin"
-          ><i class="bi bi-linkedin"></i
-        ></a>
-        <a href="https://blog.lokendrabhat.com.np" target="_blank" class="blog"
-          ><i class="bi bi-vector-pen"></i
-        ></a>
-      </div>
+    .sidebar-social {
+      display: flex;
+      gap: 0.6rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+    .sidebar-social a {
+      width: 34px; height: 34px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-dim);
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: all var(--transition);
+    }
+    .sidebar-social a:hover { border-color: var(--accent); color: var(--accent); background: rgba(99,202,183,0.08); }
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li>
-            <a href="#hero" class="active"
-              ><i class="bi bi-house navicon"></i>Home</a
-            >
-          </li>
-          <li>
-            <a href="#about"><i class="bi bi-person navicon"></i> About</a>
-          </li>
-          <li>
-            <a href="#resume"
-              ><i class="bi bi-file-earmark-text navicon"></i> Resume</a
-            >
-          </li>
-          <!-- <li>
-            <a href="#services"
-              ><i class="bi bi-hdd-stack navicon"></i> Services</a
-            >
-          </li>
-          <li>
-            <a href="#portfolio"
-              ><i class="bi bi-images navicon"></i> Our Work </a>
-          </li> -->
-          <li>
-            <a href="#contact"
-              ><i class="bi bi-envelope navicon"></i> Contact</a
-            >
-          </li>
-        </ul>
-      </nav>
-    </header>
+    /* ─── Toggle (mobile) ─── */
+    #menu-toggle {
+      display: none;
+      position: fixed;
+      top: 1rem; left: 1rem;
+      z-index: 200;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      color: var(--white);
+      width: 40px; height: 40px;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition);
+    }
 
-    <main class="main">
-      <!-- Hero Section -->
-      <section id="hero" class="hero section dark-background">
-        <img src="assets/img/bg4.jpg" alt="" data-aos="fade-in" class="" />
+    /* ── CV floating button ── */
+    #cv-btn {
+      position: fixed; top: 1.25rem; right: 1.5rem; z-index: 300;
+      display: flex; align-items: center; gap: 0.5rem;
+      padding: 0.55rem 1.1rem;
+      background: rgba(13,18,25,0.85);
+      border: 1px solid var(--border-bright);
+      border-radius: 100px;
+      color: var(--accent);
+      font-family: var(--mono); font-size: 0.7rem;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      cursor: pointer; text-decoration: none;
+      transition: all var(--transition);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    #cv-btn:hover {
+      border-color: var(--accent); color: var(--white);
+      box-shadow: 0 0 20px rgba(99,202,183,0.22), 0 4px 24px rgba(0,0,0,0.3);
+      background: rgba(99,202,183,0.1);
+    }
+    #cv-btn i { font-size: 0.95rem; }
+    .cv-pulse {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent); box-shadow: 0 0 6px var(--accent);
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
 
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <h2>Lokendra Bhat</h2>
-          <p>
-            I'm
-            <span
-              class="typed"
-              data-typed-items="Learner, DevOps, AWS Certified"
-              >Learner</span
-            ><span
-              class="typed-cursor typed-cursor--blink"
-              aria-hidden="true"
-            ></span
-            ><span
-              class="typed-cursor typed-cursor--blink"
-              aria-hidden="true"
-            ></span>
-          </p>
-        </div>
-      </section>
-      <!-- /Hero Section -->
+    /* ─── Main Content ─── */
+    #main {
+      margin-left: var(--sidebar-w);
+      min-height: 100vh;
+    }
 
-      <!-- About Section -->
-      <section id="about" class="about section">
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2>About</h2>
-          <p>
-            I'm looking forward to leveraging my skills and enthusiasm to make
-            meaningful contributions and drive success in any endeavor.
-          </p>
-        </div>
-        <!-- End Section Title -->
+    /* ─── Sections ─── */
+    section {
+      padding: 6rem 4rem;
+      border-bottom: 1px solid var(--border);
+    }
+    section:last-child { border-bottom: none; }
 
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <div class="row gy-4 justify-content-center">
-            <div class="col-lg-4">
-              <img
-                src="assets/img/my-profile-img.jpg"
-                class="img-fluid"
-                alt=""
-              />
-            </div>
-            <div class="col-lg-8 content">
-              <h2>DevOps Engineer</h2>
-              <p class="fst-italic py-3">
-                DevOps is a methodology in the software development and IT
-                industry. Used as a set of practices and tools, DevOps
-                integrates and automates the work of software development and IT
-                operations as a means for improving and shortening the systems
-                development life cycle.
-              </p>
-              <div class="row">
-                <div class="col-lg-6">
-                  <ul>
-                    <li>
-                      <i class="bi bi-chevron-right"></i>
-                      <strong>Birthday:</strong>
-                      <span id="dob"><!--02 July, 2002--></span>
-                    </li>
-                    <li>
-                      <i class="bi bi-chevron-right"></i>
-                      <strong>Website:</strong>
-                      <span>www.lokendrabhat.com.np</span>
-                    </li>
-                    <li>
-                      <i class="bi bi-chevron-right"></i>
-                      <strong>Phone:</strong> <span>+977 98********</span>
-                    </li>
-                    <li>
-                      <i class="bi bi-chevron-right"></i>
-                      <strong>City:</strong> <span>Kathmandu, Nepal</span>
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-lg-6">
-                  <ul>
-                    <li>
-                      <i class="bi bi-chevron-right"></i> <strong>Age:</strong>
-                      <span id="age"></span>
-                    </li>
-                    <li>
-                      <i class="bi bi-chevron-right"></i>
-                      <strong>Degree:</strong> <span>Bachelor</span>
-                    </li>
-                    <li>
-                      <i class="bi bi-chevron-right"></i>
-                      <strong>Email:</strong>
-                      <span>mail@lokendrabhat.com.np</span>
-                    </li>
-                    <li>
-                      <i class="bi bi-chevron-right"></i>
-                      <strong>Freelance:</strong> <span>Available</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <!-- <p class="py-3">
-                Officiis eligendi itaque labore et dolorum mollitia officiis
-                optio vero. Quisquam sunt adipisci omnis et ut. Nulla
-                accusantium dolor incidunt officia tempore. Et eius omnis.
-                Cupiditate ut dicta maxime officiis quidem quia. Sed et
-                consectetur qui quia repellendus itaque neque.
-              </p> -->
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- /About Section -->
+    .section-label {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-family: var(--display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--white);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+    }
+    .section-desc {
+      max-width: 600px;
+      color: var(--text-dim);
+      font-size: 0.95rem;
+      line-height: 1.8;
+      margin-bottom: 3rem;
+    }
 
-      <!-- Stats Section
-      <section id="stats" class="stats section">
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <div class="row gy-4">
-            <div class="col-lg-3 col-md-6">
-              <div class="stats-item">
-                <i class="bi bi-emoji-smile"></i>
-                <span
-                  data-purecounter-start="0"
-                  data-purecounter-end="232"
-                  data-purecounter-duration="1"
-                  class="purecounter"
-                ></span>
-                <p>
-                  <strong>Happy Clients</strong> <span>consequuntur quae</span>
-                </p>
-              </div>
-            </div>
+    /* ─── Hero ─── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
 
-            <div class="col-lg-3 col-md-6">
-              <div class="stats-item">
-                <i class="bi bi-journal-richtext"></i>
-                <span
-                  data-purecounter-start="0"
-                  data-purecounter-end="521"
-                  data-purecounter-duration="1"
-                  class="purecounter"
-                ></span>
-                <p>
-                  <strong>Projects</strong>
-                  <span>adipisci atque cum quia aut</span>
-                </p>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-              <div class="stats-item">
-                <i class="bi bi-headset"></i>
-                <span
-                  data-purecounter-start="0"
-                  data-purecounter-end="1453"
-                  data-purecounter-duration="1"
-                  class="purecounter"
-                ></span>
-                <p>
-                  <strong>Hours Of Support</strong>
-                  <span>aut commodi quaerat</span>
-                </p>
-              </div>
-            </div>
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+      pointer-events: none;
+    }
 
-            <div class="col-lg-3 col-md-6">
-              <div class="stats-item">
-                <i class="bi bi-people"></i>
-                <span
-                  data-purecounter-start="0"
-                  data-purecounter-end="32"
-                  data-purecounter-duration="1"
-                  class="purecounter"
-                ></span>
-                <p>
-                  <strong>Hard Workers</strong>
-                  <span>rerum asperiores dolor</span>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      /Stats Section -->
+    .hero-glow {
+      position: absolute;
+      top: -20%; left: -10%;
+      width: 60%; height: 60%;
+      background: radial-gradient(circle, rgba(99,202,183,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-glow2 {
+      position: absolute;
+      bottom: -20%; right: -10%;
+      width: 50%; height: 50%;
+      background: radial-gradient(circle, rgba(74,159,232,0.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
 
-      <!-- Skills Section -->
-      <section id="skills" class="skills section light-background">
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2>Skills</h2>
-          <p>
-            Proven ability to manage complex tasks with a strong focus on
-            problem-solving and achieving results. Demonstrates a high level of
-            adaptability, effectively handling challenges and delivering
-            solutions that align with organizational goals. Strong communication
-            and teamwork skills, ensuring efficient collaboration and project
-            success.
-          </p>
-        </div>
-        <!-- End Section Title -->
+    .hero-tag {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--accent);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .hero-tag::before {
+      content: '';
+      display: inline-block;
+      width: 24px; height: 1px;
+      background: var(--accent);
+    }
 
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <div class="row skills-content skills-animation">
-            <div class="col-lg-6">
-              <div class="progress">
-                <span class="skill"
-                  ><span>Linux</span> <i class="val">85%</i></span
-                >
-                <div class="progress-bar-wrap">
-                  <div
-                    class="progress-bar"
-                    role="progressbar"
-                    aria-valuenow="85"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-              </div>
-              <!-- End Skills Item -->
+    .hero-name {
+      font-family: var(--display);
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .hero-name .accent-dot { color: var(--accent); }
 
-              <div class="progress">
-                <span class="skill"
-                  ><span>Shell and Python Scripting </span>
-                  <i class="val">70%</i></span
-                >
-                <div class="progress-bar-wrap">
-                  <div
-                    class="progress-bar"
-                    role="progressbar"
-                    aria-valuenow="70"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-              </div>
-              <!-- End Skills Item -->
+    .hero-roles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+    .hero-role {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: 100px;
+      letter-spacing: 0.05em;
+    }
+    .hero-role.r1 { border: 1px solid rgba(99,202,183,0.4); color: var(--accent); background: rgba(99,202,183,0.07); }
+    .hero-role.r2 { border: 1px solid rgba(74,159,232,0.4); color: var(--accent2); background: rgba(74,159,232,0.07); }
+    .hero-role.r3 { border: 1px solid rgba(240,160,90,0.4); color: var(--accent3); background: rgba(240,160,90,0.07); }
 
-              <div class="progress">
-                <span class="skill"
-                  ><span>Git and GitHub</span> <i class="val">85%</i></span
-                >
-                <div class="progress-bar-wrap">
-                  <div
-                    class="progress-bar"
-                    role="progressbar"
-                    aria-valuenow="85"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-              </div>
-              <!-- End Skills Item -->
+    .hero-desc {
+      max-width: 520px;
+      color: var(--text-dim);
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+    }
 
-              <div class="progress">
-                <span class="skill"
-                  ><span>Docker</span> <i class="val">90%</i></span
-                >
-                <div class="progress-bar-wrap">
-                  <div
-                    class="progress-bar"
-                    role="progressbar"
-                    aria-valuenow="90"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-              </div>
-              <!-- End Skills Item -->
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn-primary-custom {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.75rem;
+      background: var(--accent);
+      color: var(--bg);
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      transition: all var(--transition);
+      border: 1px solid transparent;
+    }
+    .btn-primary-custom:hover { background: transparent; border-color: var(--accent); color: var(--accent); }
 
-              <div class="progress">
-                <span class="skill"
-                  ><span>CI/CD</span> <i class="val">80%</i></span
-                >
-                <div class="progress-bar-wrap">
-                  <div
-                    class="progress-bar"
-                    role="progressbar"
-                    aria-valuenow="80"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-              </div>
-              <!-- End Skills Item -->
-              <div class="progress">
-                <span class="skill"
-                  ><span>NGINX</span> <i class="val">70%</i></span
-                >
-                <div class="progress-bar-wrap">
-                  <div
-                    class="progress-bar"
-                    role="progressbar"
-                    aria-valuenow="70"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-              </div>
-              <!-- End Skills Item -->
+    .btn-outline-custom {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.75rem;
+      border: 1px solid var(--border-bright);
+      color: var(--text);
+      border-radius: 8px;
+      font-size: 0.85rem;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      transition: all var(--transition);
+    }
+    .btn-outline-custom:hover { border-color: var(--accent); color: var(--accent); }
 
-              <div class="progress">
-                <span class="skill"
-                  ><span>AWS</span> <i class="val">60%</i></span
-                >
-                <div class="progress-bar-wrap">
-                  <div
-                    class="progress-bar"
-                    role="progressbar"
-                    aria-valuenow="60"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-              </div>
-              <!-- End Skills Item -->
-            </div>
+    .hero-status {
+      margin-top: 3rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--text-dim);
+    }
+    .status-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #4ade80;
+      box-shadow: 0 0 8px #4ade80;
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(0.85); }
+    }
 
-            <div class="col-lg-6">
-              <div class="progress">
-                <span class="skill"
-                  ><span>Jenkins</span> <i class="val">80%</i></span
-                >
-                <div class="progress-bar-wrap">
-                  <div
-                    class="progress-bar"
-                    role="progressbar"
-                    aria-valuenow="80"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-              </div>
-              <!-- End Skills Item -->
-              <div class="progress">
-                <span class="skill"
-                  ><span>SQL</span> <i class="val">75%</i></span
-                >
-                <div class="progress-bar-wrap">
-                  <div
-                    class="progress-bar"
-                    role="progressbar"
-                    aria-valuenow="75"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-              </div>
-              <!-- End Skills Item -->
-              <div class="progress">
-                <span class="skill"
-                  ><span>Monitoring and Logging</span>
-                  <i class="val">75%</i></span
-                >
-                <div class="progress-bar-wrap">
-                  <div
-                    class="progress-bar"
-                    role="progressbar"
-                    aria-valuenow="75"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-              </div>
-              <!-- End Skills Item -->
-              <div class="progress">
-                <span class="skill"
-                  ><span>Networking</span> <i class="val">75%</i></span
-                >
-                <div class="progress-bar-wrap">
-                  <div
-                    class="progress-bar"
-                    role="progressbar"
-                    aria-valuenow="75"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-              </div>
-              <!-- End Skills Item -->
-              <div class="progress">
-                <span class="skill"
-                  ><span>IaC</span> <i class="val">50%</i></span
-                >
-                <div class="progress-bar-wrap">
-                  <div
-                    class="progress-bar"
-                    role="progressbar"
-                    aria-valuenow="50"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-              </div>
+    /* ─── About ─── */
+    #about { background: var(--bg2); }
 
-              <!-- End Skills Item -->
-              <div class="progress">
-                <span class="skill"
-                  ><span>Kubernetes</span> <i class="val">60%</i></span
-                >
-                <div class="progress-bar-wrap">
-                  <div
-                    class="progress-bar"
-                    role="progressbar"
-                    aria-valuenow="60"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-              </div>
-              <!-- End Skills Item -->
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
 
-              <div class="progress">
-                <span class="skill"
-                  ><span>Problem Solving and Collaboration</span>
-                  <i class="val">90%</i></span
-                >
-                <div class="progress-bar-wrap">
-                  <div
-                    class="progress-bar"
-                    role="progressbar"
-                    aria-valuenow="90"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-              </div>
-              <!-- End Skills Item -->
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- /Skills Section -->
+    .about-photo-wrap {
+      position: relative;
+    }
+    .about-photo {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      display: block;
+      filter: grayscale(20%);
+      transition: filter var(--transition);
+    }
+    .about-photo:hover { filter: grayscale(0%); }
+    .about-photo-frame {
+      position: absolute;
+      inset: -8px;
+      border: 1px solid var(--border-bright);
+      border-radius: 16px;
+      pointer-events: none;
+    }
 
-      <!-- Resume Section -->
-      <section id="resume" class="resume section">
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2>Resume</h2>
-          <p>
-            A dedicated and resourceful DevOps Engineer with experience in
-            managing complex cloud infrastructures, automating deployment
-            pipelines, and ensuring system reliability. Known for successfully
-            implementing containerization solutions, optimizing CI/CD processes,
-            and collaborating effectively with cross-functional teams. Adept at
-            problem-solving and committed to continuous learning and technology
-            exploration.
-          </p>
-        </div>
-        <!-- End Section Title -->
+    .about-info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+    .info-pill {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+    }
+    .info-pill .label {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      margin-bottom: 0.2rem;
+    }
+    .info-pill .value {
+      font-size: 0.85rem;
+      color: var(--white);
+      font-weight: 500;
+    }
 
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-              <h3 class="resume-title">Summary</h3>
-              <div class="resume-item pb-0">
-                <h4>Lokendra Bhat</h4>
-                <p>
-                  <em>
-                    Dynamic and results-driven DevOps Engineer with expertise in cloud infrastructure, 
-                    containerization, and automation. Proven track record in optimizing deployment workflows, 
-                    implementing security best practices, and driving operational excellence. Passionate about 
-                    leveraging cutting-edge technologies to solve complex infrastructure challenges and 
-                    improve system reliability.
-                  </em>
-                </p>
-                <ul>
-                  <li>📍 Kathmandu, Nepal</li>
-                  <li>📱 (98*) ***-****</li>
-                  <li>📧 mail@lokendrabhat.com.np</li>
-                </ul>
-              </div>
-              <!-- End Resume Item -->
+    .about-body { color: var(--text); line-height: 1.8; font-size: 0.95rem; }
+    .about-body p { margin-bottom: 1rem; }
 
-              <h3 class="resume-title">Education</h3>
-              <div class="resume-item">
-                <h4>MIT - Master in Information Technologies</h4>
-                <h5>2024 - Now</h5>
-                <p><em>Amrit Campus, Tribhuvan University, Kathmandu, Nepal</em></p>
-                <p>
-                  Research-oriented program focusing on advanced IT concepts, including:
-                </p>
-                <ul>
-                  <li>Cloud computing and virtualization technologies</li>
-                  <li>Advanced networking and cybersecurity principles</li>
-                  <li>Data science, machine learning, and big data analytics</li>
-                  <li>Software development methodologies and project management</li>
-                </ul>
-              </div>
-              <!-- End Resume Item -->
-              <div class="resume-item">
-                <h4>B.Sc. CSIT - Bachelor of Science in Computer Science and Information Technology</h4>
-                <h5>2019 - 2024</h5>
-                <p><em>Amrit Campus, Tribhuvan University, Kathmandu, Nepal</em></p>
-                <p>
-                  Comprehensive study of computer science fundamentals and modern technologies with focus on:
-                </p>
-                <ul>
-                  <li>Advanced programming concepts and software engineering principles</li>
-                  <li>Network architecture and security protocols</li>
-                  <li>Database management and system administration</li>
-                  <li>Cloud computing and distributed systems</li>
-                  <li>Achieved distinction with over 80% marks</li>
-                </ul>
-              </div>
-              <!-- End Resume Item -->
+    /* ─── Skills ─── */
+    .skills-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .skill-item { }
+    .skill-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+    .skill-name {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+    .skill-val {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--accent);
+    }
+    .skill-track {
+      height: 3px;
+      background: var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .skill-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      border-radius: 2px;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .skill-fill.animate { transform: scaleX(1); }
 
-              <div class="resume-item">
-                <h4>Higher Secondary Education in Science (10+2)</h4>
-                <h5>2017 - 2019</h5>
-                <p><em>Radiant Secondary School, Mahendranagar, Nepal</em></p>
-                <p>
-                  Pursued higher secondary education with a focus on science
-                  subjects, laying the groundwork for a career in technology and
-                  engineering.
-                </p>
-              </div>
-              <!-- End Resume Item -->
-            </div>
+    /* ─── Resume / Timeline ─── */
+    #resume { background: var(--bg2); }
 
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-              <h3 class="resume-title">Professional Experience</h3>
-              <div class="resume-item">
-                <h4>Associate DevOps Engineer</h4>
-                <h5>01/2024 - Present</h5>
-                <p><em>Amnil Technologies Pvt. Ltd., Kathmandu, Nepal</em></p>
-                <ul>
-                  <li>
-                    <strong>🔄 CI/CD Automation:</strong> Designed and maintained Jenkins pipelines, reducing deployment time by 60% and implementing automated testing for enhanced reliability.
-                  </li>
-                  <li>
-                    <strong>📦 Containerization Excellence:</strong> Implemented Docker & Kubernetes for scalable applications, optimizing Docker images from 6 GB to 2.5 GB through best practices and layer analysis.
-                  </li>
-                  <li>
-                    <strong>🌐 Advanced Proxy Configuration:</strong> Implemented Nginx as proxy server with enhanced security features including rate limiting, IP filtering, security headers, and custom proxy rules. Gained practical experience with HAProxy for Kubernetes load balancing.
-                  </li>
-                  <li>
-                    <strong>📊 Monitoring & Reliability:</strong> Achieved 99.9% uptime using Prometheus & Grafana for comprehensive system monitoring, with proactive alert management.
-                  </li>
-                  <li>
-                    <strong>🏢 Infrastructure Management:</strong> Set up and managed on-premises servers with high-availability configurations, ensuring robust and reliable infrastructure.
-                  </li>
-                  <li>
-                    <strong>🛠 Infrastructure as Code:</strong> Automated server configurations and deployments using Ansible, significantly reducing manual intervention and potential errors.
-                  </li>
-                  <li>
-                    <strong>⚙️ Kubernetes Operations:</strong> Successfully deployed and monitored applications in Kubernetes clusters, implementing auto-scaling and high availability.
-                  </li>
-                  <li>
-                    <strong>🤖 DevOps Automation:</strong> Configured comprehensive CI/CD pipelines for microservices architecture, enabling parameterized builds and deployments.
-                  </li>
-                  <li>
-                    <strong>🔍 Security & Compliance:</strong> Led vulnerability assessments and security patching initiatives, implementing VAPT recommendations and maintaining robust security protocols.
-                  </li>
-                  <li>
-                    <strong>🚀 Innovative Research:</strong> Researched and implemented self-hosting solutions for various services, contributing to cost optimization and improved system control.
-                  </li>
-                </ul>
-              </div>
-              <!-- End Resume Item -->
+    .resume-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
 
-              <div class="resume-item">
-                <h4>AWS re/Start Program Graduate</h4>
-                <h5>03/2023 - 06/2023</h5>
-                <p><em>Amazon Web Services, Kathmandu, Nepal</em></p>
-                <ul>
-                  <li>
-                    <strong>☁️ AWS Core Services:</strong> Mastered essential AWS services including EC2, S3, RDS, and VPC configuration
-                  </li>
-                  <li>
-                    <strong>🔒 Cloud Security:</strong> Implemented AWS security best practices, IAM policies, and compliance frameworks
-                  </li>
-                  <li>
-                    <strong>💻 Technical Skills:</strong> Developed proficiency in Linux administration, scripting, and networking fundamentals
-                  </li>
-                  <li>
-                    <strong>📊 Cloud Architecture:</strong> Designed and deployed scalable cloud solutions following AWS Well-Architected Framework
-                  </li>
-                  <li>
-                    <strong>🤝 Professional Development:</strong> Enhanced leadership, problem-solving, and team collaboration capabilities through group projects
-                  </li>
-                  <li>
-                    <strong>📈 Achievement:</strong> Completed program with full attendance and earned AWS Cloud Practitioner certification
-                  </li>
-                </ul>
-              </div>
-              <!-- End Resume Item -->
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- /Resume Section -->
+    .timeline-section-label {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .timeline-section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
 
-      <!-- Contact Section -->
-      <section id="contact" class="contact section light-background">
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2>Get in Touch</h2>
-          <p>
-            Let's collaborate on your next project! Whether you need DevOps expertise, 
-            cloud solutions, or just want to discuss technology, I'm here to help.
-            Feel free to reach out through the form below or connect with me on social media.
-          </p>
-        </div>
-        <!-- End Section Title -->
+    .timeline { position: relative; padding-left: 1.5rem; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 1px;
+      background: var(--border);
+    }
 
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <div class="row gy-4 justify-content-between">
-            <div class="col-lg-5">
-              <div class="info-wrap h-100">
-                <div
-                  class="info-item d-flex align-items-start"
-                  data-aos="fade-up"
-                  data-aos-delay="200"
-                >
-                  <i class="bi bi-geo-alt flex-shrink-0"></i>
-                  <div>
-                    <h3>Location</h3>
-                    <p>Kathmandu, Nepal</p>
-                    <p class="text-muted">Available for remote work worldwide</p>
-                  </div>
-                </div>
-                <!-- End Info Item -->
+    .timeline-item {
+      position: relative;
+      padding-bottom: 2rem;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .timeline-item.visible { opacity: 1; transform: translateY(0); }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -1.5rem;
+      top: 0.35rem;
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid var(--bg2);
+      box-shadow: 0 0 6px var(--accent);
+    }
 
-                <div
-                  class="info-item d-flex"
-                  data-aos="fade-up"
-                  data-aos-delay="300"
-                >
-                  <i class="bi bi-clock flex-shrink-0"></i>
-                  <div>
-                    <h3>Working Hours</h3>
-                    <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-                    <p class="text-muted">Flexible for different time zones</p>
-                  </div>
-                </div>
-                <!-- End Info Item -->
+    .timeline-period {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      color: var(--text-dim);
+      margin-bottom: 0.3rem;
+    }
+    .timeline-role {
+      font-family: var(--display);
+      font-size: 1rem;
+      color: var(--white);
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+    .timeline-org {
+      font-size: 0.8rem;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+    .timeline-body {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      line-height: 1.7;
+    }
+    .timeline-body ul { list-style: none; }
+    .timeline-body ul li { margin-bottom: 0.4rem; display: flex; gap: 0.5rem; }
+    .timeline-body ul li::before { content: '→'; color: var(--accent); flex-shrink: 0; }
 
-                <div
-                  class="info-item d-flex"
-                  data-aos="fade-up"
-                  data-aos-delay="400"
-                >
-                  <i class="bi bi-envelope flex-shrink-0"></i>
-                  <div>
-                    <h3>Email</h3>
-                    <p>mail@lokendrabhat.com.np</p>
-                  </div>
-                </div>
-                <!-- End Info Item -->
+    /* ─── Contact ─── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 3rem;
+      align-items: start;
+    }
 
-                <!-- Optional Google Maps iframe -->
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14154.575066547072!2d85.31572643810843!3d27.71724568817365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19048d08c133%3A0x696e7a8dd659930b!2sKathmandu%2C%20Nepal!5e0!3m2!1sen!2sus!4v1676962140245!5m2!1sen!2sus"
-                  frameborder="0"
-                  style="border: 0; width: 100%; height: 270px"
-                  allowfullscreen=""
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
-                ></iframe>
-              </div>
-            </div>
+    .contact-info { }
+    .contact-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+      transition: border-color var(--transition);
+    }
+    .contact-card:hover { border-color: var(--border-bright); }
+    .contact-icon {
+      width: 40px; height: 40px;
+      border-radius: 8px;
+      background: rgba(99,202,183,0.1);
+      border: 1px solid rgba(99,202,183,0.2);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--accent);
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .contact-card-label {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      margin-bottom: 0.2rem;
+    }
+    .contact-card-value { font-size: 0.85rem; color: var(--white); }
+    .contact-card-sub { font-size: 0.75rem; color: var(--text-dim); margin-top: 0.1rem; }
 
-            <div class="col-lg-7">
-              <!-- <form
-                action="forms/contact.php"
-                method="post"
-                class="php-email-form"
-                data-aos="fade-up"
-                data-aos-delay="200"
-              >
-	      -->
-              <form
-                action="https://formspree.io/f/xgvwdzoa"
-                method="POST"
-                class="php-email-form"
-                data-aos="fade-up"
-                data-aos-delay="200"
-              >
-                <div class="row gy-4">
-                  <div class="col-md-6">
-                    <label for="name-field" class="pb-2"><i class="bi bi-person"></i> Your Name</label>
-                    <input
-                      type="text"
-                      name="name"
-                      id="name-field"
-                      class="form-control"
-                      placeholder="Enter your full name"
-                      required=""
-                    />
-                  </div>
+    .contact-map {
+      width: 100%;
+      height: 200px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin-top: 1rem;
+      overflow: hidden;
+    }
+    .contact-map iframe { width: 100%; height: 100%; filter: grayscale(80%) invert(90%) hue-rotate(180deg); }
 
-                  <div class="col-md-6">
-                    <label for="email-field" class="pb-2"><i class="bi bi-envelope"></i> Your Email</label>
-                    <input
-                      type="email"
-                      class="form-control"
-                      name="email"
-                      id="email-field"
-                      placeholder="abc@example.com"
-                      required=""
-                    />
-                  </div>
+    /* ─── Form ─── */
+    .contact-form { }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .form-group { margin-bottom: 1rem; }
+    .form-label {
+      display: block;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 0.5rem;
+    }
+    .form-control {
+      width: 100%;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--white);
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      padding: 0.7rem 0.9rem;
+      transition: border-color var(--transition);
+      outline: none;
+      -webkit-appearance: none;
+    }
+    .form-control:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(99,202,183,0.1); }
+    .form-control::placeholder { color: var(--text-dim); }
+    select.form-control option { background: var(--bg2); }
+    textarea.form-control { resize: vertical; min-height: 130px; }
 
-                  <div class="col-md-12">
-                    <label for="subject-field" class="pb-2"><i class="bi bi-chat-text"></i> Subject</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      name="subject"
-                      id="subject-field"
-                      placeholder="How can I help you?"
-                      required=""
-                    />
-                  </div>
+    .recaptcha-wrap {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 1rem;
+    }
 
-                  <div class="col-md-12">
-                    <label for="purpose-field" class="pb-2"><i class="bi bi-list-check"></i> Purpose</label>
-                    <select class="form-control" name="purpose" id="purpose-field" required="">
-                      <option value="">Select the purpose of your message</option>
-                      <option value="DevOps Consultation">DevOps Consultation</option>
-                      <option value="Cloud Architecture">Cloud Architecture</option>
-                      <option value="Job Opportunity">Job Opportunity</option>
-                      <option value="Collaboration">Project Collaboration</option>
-                      <option value="Other">Other</option>
-                    </select>
-                  </div>
+    .form-submit {
+      width: 100%;
+      padding: 0.8rem;
+      background: var(--accent);
+      color: var(--bg);
+      border: none;
+      border-radius: 8px;
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transition: all var(--transition);
+      letter-spacing: 0.03em;
+    }
+    .form-submit:hover { background: transparent; border: 1px solid var(--accent); color: var(--accent); }
 
-                  <div class="col-md-12">
-                    <label for="message-field" class="pb-2"><i class="bi bi-pencil"></i> Message</label>
-                    <textarea
-                      class="form-control"
-                      name="message"
-                      rows="6"
-                      id="message-field"
-                      placeholder="Tell me about your project, requirements, or any questions you have..."
-                      required=""
-                    ></textarea>
-                  </div>
+    .form-status {
+      font-size: 0.82rem;
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      margin-bottom: 1rem;
+      display: none;
+    }
+    .form-status.loading { background: rgba(99,202,183,0.08); border: 1px solid rgba(99,202,183,0.2); color: var(--accent); display: block; }
+    .form-status.success { background: rgba(74,222,128,0.08); border: 1px solid rgba(74,222,128,0.2); color: #4ade80; display: block; }
+    .form-status.error { background: rgba(248,113,113,0.08); border: 1px solid rgba(248,113,113,0.2); color: #f87171; display: block; }
 
-                  <div class="col-md-12 text-center">
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">
-                      Your message has been sent. Thank you for reaching out!
-                    </div>
-                    <!-- CAPTCHA UI for white theme -->
-                    <div class="card shadow-sm border mx-auto mb-3" style="max-width: 350px; background: #fff; border-radius: 12px;">
-                      <div class="card-body p-3">
-                        <div class="mb-2 text-center">
-                          <span class="d-inline-block" style="font-size: 1.2rem; color: #0d6efd;">
-                            <i class="bi bi-shield-lock"></i> CAPTCHA Verification
-                          </span>
-                        </div>
-                        <div class="d-flex justify-content-center">
-                          <div class="g-recaptcha" data-sitekey="6Ld5gcErAAAAACY8vyO7cjqthM3mA1G0Zqr0kjmY" data-theme="light"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <button type="submit">
-                      <i class="bi bi-send me-2"></i>Send Message
-                    </button>
-                  </div>
-                </div>
-              </form>
-            </div>
-            <!-- End Contact Form -->
-          </div>
-        </div>
-      </section>
-      <!-- /Contact Section -->
-    </main>
+    /* ─── Footer ─── */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--text-dim);
+      border-top: 1px solid var(--border);
+    }
 
-    <footer id="footer" class="footer position-relative">
-      <div class="container">
-        <div class="copyright text-center">
-          <p>
-            © <span>Copyright</span>
-            <strong><span>Lokendra Bhat</span></strong>.
-            <span>All Rights Reserved</span>
-          </p>
-        </div>
-        <div class="credits">Designed by Lokendra Bhat</div>
-      </div>
-    </footer>
+    /* ─── Scroll Top ─── */
+    #scroll-top {
+      position: fixed;
+      bottom: 1.5rem; right: 1.5rem;
+      width: 38px; height: 38px;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 1rem;
+      opacity: 0; pointer-events: none;
+      transition: all var(--transition);
+      z-index: 50;
+    }
+    #scroll-top.visible { opacity: 1; pointer-events: all; }
+    #scroll-top:hover { border-color: var(--accent); color: var(--accent); }
 
-    <!-- Scroll Top -->
-    <a
-      href="#"
-      id="scroll-top"
-      class="scroll-top d-flex align-items-center justify-content-center"
-      ><i class="bi bi-arrow-up-short"></i
-    ></a>
+    /* ─── Fade-in on scroll ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    <!-- Preloader -->
-    <div id="preloader"></div>
+    /* ─── Responsive ─── */
+    @media (max-width: 1024px) {
+      :root { --sidebar-w: 240px; }
+      section { padding: 5rem 2.5rem; }
+    }
 
-    <!-- Vendor JS Files -->
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/typed.js/typed.umd.js"></script>
-    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-    <!-- Main JS File -->
-    <script src="assets/js/main.js"></script>
-    <script>
-      // Set your date of birth here (Year, Month - 1, Day)
-      const dob = new Date(2002, 6, 2);
-
-      // Function to calculate age
-      function calculateAge(dob) {
-        const diffMs = Date.now() - dob.getTime();
-        const ageDt = new Date(diffMs);
-
-        return Math.abs(ageDt.getUTCFullYear() - 1970);
+    @media (max-width: 768px) {
+      #sidebar {
+        transform: translateX(-100%);
       }
-      document.getElementById("dob").innerText = dob
-        .toString()
-        .split(" ")
-        .slice(1, 3)
-        .join(" ");
-      document.getElementById("age").innerText = calculateAge(dob);
+      #sidebar.open { transform: translateX(0); }
+      #menu-toggle { display: flex; }
+      #main { margin-left: 0; }
+      section { padding: 4rem 1.5rem; }
+      .about-grid, .skills-list, .resume-cols, .contact-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .hero-name { font-size: clamp(2.5rem, 10vw, 4rem); }
+      #hero { padding: 5rem 1.5rem 3rem; }
+      #cv-panel { width: 100vw; }
+      #cv-btn { top: 1rem; right: 1rem; }
+      .cv-header-actions .cv-action-btn:first-child { display: none; } /* hide "open in tab" on mobile */
 
-      (function () {
-        "use strict";
-        let forms = document.querySelectorAll(".php-email-form");
-        forms.forEach(function (e) {
-          e.addEventListener("submit", function (event) {
-            event.preventDefault();
-            let thisForm = this;
-            let action = thisForm.getAttribute("action");
-            if (!action) {
-              displayError(thisForm, "The form action property is not set!");
-              return;
-            }
-            // Verify reCAPTCHA v2
-            const recaptchaResponse = grecaptcha.getResponse();
-            if (!recaptchaResponse) {
-              displayError(thisForm, "Please complete the reCAPTCHA verification!");
-              return;
-            }
-            // Hide all messages initially
-            thisForm.querySelector(".loading").classList.add("d-block");
-            thisForm.querySelector(".error-message").classList.remove("d-block");
-            thisForm.querySelector(".sent-message").classList.remove("d-block");
-            let formData = new FormData(thisForm);
-            fetch(action, {
-              method: "POST",
-              body: formData,
-              headers: { "X-Requested-With": "XMLHttpRequest" },
-            })
-              .then((response) => {
-                if (response.ok) {
-                  return response.json();
-                } else {
-                  throw new Error(`${response.status} ${response.statusText}`);
-                }
-              })
-              .then((data) => {
-                thisForm.querySelector(".loading").classList.remove("d-block");
-                if (data && data.next) {
-                  if (data.next.includes("/thanks")) {
-                    thisForm.querySelector(".sent-message").classList.add("d-block");
-                    thisForm.reset();
-                  } else {
-                    thisForm.querySelector(".sent-message").classList.remove("d-block");
-                  }
-                } else {
-                  thisForm.querySelector(".sent-message").classList.remove("d-block");
-                }
-              })
-              .catch((error) => {
-                thisForm.querySelector(".loading").classList.remove("d-block");
-                thisForm.querySelector(".error-message").classList.remove("d-block");
-              });
-          });
+    }
+    /* ─── CV Modal Panel ─── */
+    #cv-modal {
+      position: fixed; inset: 0; z-index: 500;
+      display: flex; align-items: stretch; justify-content: flex-end;
+      pointer-events: none;
+    }
+    #cv-modal.open { pointer-events: all; }
+    #cv-backdrop {
+      position: absolute; inset: 0;
+      background: rgba(5,8,12,0.78);
+      backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+      opacity: 0; transition: opacity 0.35s ease;
+    }
+    #cv-modal.open #cv-backdrop { opacity: 1; }
+    #cv-panel {
+      position: relative; width: min(860px, 100vw); height: 100vh;
+      background: var(--bg2); border-left: 1px solid var(--border);
+      display: flex; flex-direction: column;
+      transform: translateX(100%);
+      transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
+      box-shadow: -24px 0 64px rgba(0,0,0,0.5);
+    }
+    #cv-modal.open #cv-panel { transform: translateX(0); }
+    #cv-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 1.5rem; border-bottom: 1px solid var(--border); flex-shrink: 0;
+    }
+    .cv-header-left { display: flex; align-items: center; gap: 0.75rem; }
+    .cv-header-icon {
+      width: 34px; height: 34px; border-radius: 8px;
+      background: rgba(99,202,183,0.1); border: 1px solid rgba(99,202,183,0.2);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--accent); font-size: 0.9rem;
+    }
+    .cv-header-title { font-family: var(--display); font-size: 0.95rem; color: var(--white); font-weight: 700; }
+    .cv-header-sub { font-family: var(--mono); font-size: 0.6rem; color: var(--text-dim); letter-spacing: 0.1em; }
+    .cv-header-actions { display: flex; align-items: center; gap: 0.5rem; }
+    .cv-action-btn {
+      display: flex; align-items: center; gap: 0.4rem;
+      padding: 0.45rem 0.9rem; border-radius: 8px;
+      font-size: 0.75rem; font-family: var(--sans); font-weight: 500;
+      cursor: pointer; text-decoration: none;
+      transition: all var(--transition);
+      border: 1px solid var(--border); color: var(--text-dim); background: transparent;
+    }
+    .cv-action-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .cv-action-btn.primary { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+    .cv-action-btn.primary:hover { background: transparent; color: var(--accent); }
+    #cv-close {
+      width: 34px; height: 34px; border-radius: 8px;
+      border: 1px solid var(--border); background: transparent;
+      color: var(--text-dim); font-size: 1rem; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: all var(--transition);
+    }
+    #cv-close:hover { border-color: #f87171; color: #f87171; }
+    #cv-frame-wrap { flex: 1; overflow: hidden; position: relative; }
+    #cv-frame { width: 100%; height: 100%; border: none; display: block; }
+    #cv-loading {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 1rem;
+      background: var(--bg2);
+    }
+    #cv-file-warning { position: absolute; inset: 0; background: var(--bg2); }
+    #cv-file-warning code { font-family: var(--mono); color: var(--accent); }
+    .cv-spinner {
+      width: 36px; height: 36px;
+      border: 2px solid var(--border); border-top-color: var(--accent);
+      border-radius: 50%; animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .cv-loading-text { font-family: var(--mono); font-size: 0.7rem; color: var(--text-dim); letter-spacing: 0.1em; }
+
+    /* ─── Overlay (mobile) ─── */
+    #overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 99;
+    }
+    #overlay.active { display: block; }
+  </style>
+</head>
+
+<body>
+
+<div id="overlay"></div>
+
+<button id="menu-toggle" aria-label="Toggle menu"><i class="bi bi-list"></i></button>
+<!-- ── Floating CV button ── -->
+<button id="cv-btn" aria-haspopup="dialog" aria-label="Open CV viewer">
+  <div class="cv-pulse" aria-hidden="true"></div>
+  <i class="bi bi-file-person" aria-hidden="true"></i>
+  <span>View CV</span>
+</button>
+<!-- CV slide-in panel -->
+<div id="cv-modal" role="dialog" aria-modal="true" aria-label="CV Viewer">
+  <div id="cv-backdrop"></div>
+  <div id="cv-panel">
+    <div id="cv-header">
+      <div class="cv-header-left">
+        <div class="cv-header-icon"><i class="bi bi-file-person" aria-hidden="true"></i></div>
+        <div>
+          <div class="cv-header-title">Lokendra Bhat</div>
+          <div class="cv-header-sub">·DEVOPS ENGINEER·</div>
+        </div>
+      </div>
+      <div class="cv-header-actions">
+        <a href="cv.html" target="_blank" rel="noopener noreferrer" class="cv-action-btn" id="cv-open-tab">
+          <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> Open in new tab
+        </a>
+        <a href="cv.html" download class="cv-action-btn primary">
+          <i class="bi bi-download" aria-hidden="true"></i> Download
+        </a>
+        <button id="cv-close" aria-label="Close CV viewer"><i class="bi bi-x" aria-hidden="true"></i></button>
+      </div>
+    </div>
+    <div id="cv-frame-wrap">
+      <div id="cv-loading">
+        <div class="cv-spinner"></div>
+        <div class="cv-loading-text">LOADING CV…</div>
+      </div>
+      <div id="cv-file-warning" style="display:none; flex-direction:column; align-items:center; justify-content:center; height:100%; gap:1.5rem; padding:2rem; text-align:center;">
+        <i class="bi bi-shield-lock" style="font-size:2.5rem; color:var(--accent);"></i>
+        <p style="font-family:var(--mono); font-size:0.75rem; color:var(--text-dim); line-height:2; max-width:360px;">
+          Browsers block iframes when opening files directly from disk (<code>file://</code>).<br>
+          This works correctly when served from a web server.<br><br>
+          <strong style="color:var(--white);">In the meantime, use the buttons above to open or download cv.html.</strong>
+        </p>
+        <a href="cv.html" target="_blank" rel="noopener noreferrer" class="cv-action-btn primary" style="display:inline-flex;">
+          <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> Open cv.html directly
+        </a>
+      </div>
+      <iframe id="cv-frame" title="Lokendra Bhat Curriculum Vitae" src="" tabindex="0"></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<aside id="sidebar">
+  <a href="#hero" class="sidebar-logo">
+    <div class="sidebar-logo-mark">LB</div>
+    <div class="sidebar-logo-name">
+      Lokendra Bhat
+      <span>DevOps Engineer</span>
+    </div>
+  </a>
+
+  <nav>
+    <ul>
+      <li><a href="#hero" class="active"><i class="bi bi-house"></i>Home</a></li>
+      <li><a href="#about"><i class="bi bi-person"></i>About</a></li>
+      <li><a href="#skills"><i class="bi bi-cpu"></i>Skills</a></li>
+      <li><a href="#resume"><i class="bi bi-file-earmark-text"></i>Resume</a></li>
+      <li><a href="#contact"><i class="bi bi-envelope"></i>Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="sidebar-social">
+    <a href="https://github.com/lokendrabhat" target="_blank" title="GitHub"><i class="bi bi-github"></i></a>
+    <a href="https://www.linkedin.com/in/lokendra-bhat-bb2b6b24a/" target="_blank" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+    <a href="https://blog.lokendrabhat.com.np" target="_blank" title="Blog"><i class="bi bi-vector-pen"></i></a>
+  </div>
+</aside>
+
+<!-- Main -->
+<main id="main">
+
+  <!-- Hero -->
+  <section id="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-glow2"></div>
+    <div class="hero-tag">Available for opportunities</div>
+    <h1 class="hero-name">Lokendra<br>Bhat<span class="accent-dot">.</span></h1>
+    <div class="hero-roles">
+      <span class="hero-role r1"><i class="bi bi-gear-fill"></i> DevOps Engineer</span>
+      <span class="hero-role r2"><i class="bi bi-cloud-fill"></i> AWS Certified</span>
+      <span class="hero-role r3"><i class="bi bi-boxes"></i> Infrastructure Engineer</span>
+    </div>
+    <p class="hero-desc">Building reliable, automated cloud infrastructure. Specializing in CI/CD pipelines, containerization, and making deployments boring (in the best way).</p>
+    <div class="hero-cta">
+      <a href="./cv.html" class="btn-primary-custom"><i class="bi bi-file-earmark-text"></i>View CV</a>
+      <a href="#contact" class="btn-outline-custom"><i class="bi bi-arrow-right"></i>Get in Touch</a>
+    </div>
+    <div class="hero-status">
+      <span class="status-dot"></span>
+      Based in Kathmandu, Nepal · Open to remote work
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="section-label">About me</div>
+    <h2 class="section-title">Who I Am</h2>
+
+    <div class="about-grid">
+      <div class="about-photo-wrap reveal">
+        <img src="assets/img/my-profile-img.jpg" alt="Lokendra Bhat" class="about-photo" />
+        <div class="about-photo-frame"></div>
+      </div>
+
+      <div class="reveal">
+        <div class="about-body">
+          <p>I'm a DevOps Engineer at Amnil Technologies, Kathmandu — passionate about bridging the gap between development and operations through intelligent automation, robust infrastructure, and a culture of reliability.</p>
+          <p>With a B.Sc. CSIT (distinction) and currently pursuing my MIT at Tribhuvan University, I bring both academic depth and hands-on production experience to every challenge.</p>
+        </div>
+
+        <div class="about-info-grid">
+          <div class="info-pill">
+            <div class="label">Location</div>
+            <div class="value">Kathmandu, Nepal</div>
+          </div>
+          <div class="info-pill">
+            <div class="label">Degree</div>
+            <div class="value">MIT (in progress)</div>
+          </div>
+          <div class="info-pill">
+            <div class="label">Email</div>
+            <div class="value" style="font-size:0.78rem">mail@lokendrabhat.com.np</div>
+          </div>
+          <div class="info-pill">
+            <div class="label">Freelance</div>
+            <div class="value" style="color: #4ade80">Available ✓</div>
+          </div>
+          <div class="info-pill">
+            <div class="label">Experience</div>
+            <div class="value">2.5+ Years</div>
+          </div>
+          <div class="info-pill">
+            <div class="label">Certification</div>
+            <div class="value">AWS Cloud Practitioner</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class="section-label">Technical skills</div>
+    <h2 class="section-title">What I Work With</h2>
+    <p class="section-desc">Core competencies built through real production environments and continuous learning.</p>
+
+    <div class="skills-list" id="skills-list">
+      <div class="skill-item">
+        <div class="skill-header"><span class="skill-name">Docker</span><span class="skill-val">90%</span></div>
+        <div class="skill-track"><div class="skill-fill" style="--w:0.9"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header"><span class="skill-name">Linux</span><span class="skill-val">85%</span></div>
+        <div class="skill-track"><div class="skill-fill" style="--w:0.85"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header"><span class="skill-name">Git & GitHub</span><span class="skill-val">85%</span></div>
+        <div class="skill-track"><div class="skill-fill" style="--w:0.85"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header"><span class="skill-name">Jenkins / CI/CD</span><span class="skill-val">90%</span></div>
+        <div class="skill-track"><div class="skill-fill" style="--w:0.8"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header"><span class="skill-name">Problem Solving</span><span class="skill-val">90%</span></div>
+        <div class="skill-track"><div class="skill-fill" style="--w:0.9"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header"><span class="skill-name">Shell & Python Scripting</span><span class="skill-val">75%</span></div>
+        <div class="skill-track"><div class="skill-fill" style="--w:0.7"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header"><span class="skill-name">NGINX</span><span class="skill-val">80%</span></div>
+        <div class="skill-track"><div class="skill-fill" style="--w:0.7"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header"><span class="skill-name">Monitoring & Logging</span><span class="skill-val">80%</span></div>
+        <div class="skill-track"><div class="skill-fill" style="--w:0.75"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header"><span class="skill-name">Database</span><span class="skill-val">75%</span></div>
+        <div class="skill-track"><div class="skill-fill" style="--w:0.75"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header"><span class="skill-name">Networking</span><span class="skill-val">75%</span></div>
+        <div class="skill-track"><div class="skill-fill" style="--w:0.75"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header"><span class="skill-name">Kubernetes</span><span class="skill-val">70%</span></div>
+        <div class="skill-track"><div class="skill-fill" style="--w:0.6"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header"><span class="skill-name">AWS</span><span class="skill-val">60%</span></div>
+        <div class="skill-track"><div class="skill-fill" style="--w:0.6"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header"><span class="skill-name">IaC (Ansible / Terraform)</span><span class="skill-val">60%</span></div>
+        <div class="skill-track"><div class="skill-fill" style="--w:0.5"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resume -->
+  <section id="resume">
+    <div class="section-label">Resume</div>
+    <h2 class="section-title">Experience & Education</h2>
+    <p class="section-desc">A track record of building resilient systems and automating everything that can be automated.</p>
+
+    <div class="resume-cols">
+      <!-- Experience -->
+      <div>
+        <div class="timeline-section-label">Experience</div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-period">Jan 2024 — Present</div>
+            <div class="timeline-role">Associate DevOps Engineer</div>
+            <div class="timeline-org">Amnil Technologies Pvt. Ltd. · Kathmandu</div>
+            <div class="timeline-body">
+              <ul>
+                <li>Reduced deployment time by 60% via Jenkins CI/CD pipeline automation.</li>
+                <li>Optimized Docker images from 6 GB → 2.5 GB through layer analysis and best practices.</li>
+                <li>Achieved 99.9% uptime using Prometheus & Grafana monitoring with proactive alerting.</li>
+                <li>Configured NGINX with rate limiting, IP filtering, and advanced security headers.</li>
+                <li>Deployed and scaled applications in Kubernetes with auto-scaling and HA configs.</li>
+                <li>Automated server provisioning with Ansible, reducing manual intervention significantly.</li>
+                <li>Led VAPT initiatives and implemented security patching protocols.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-period">Mar 2023 — Jun 2023</div>
+            <div class="timeline-role">AWS re/Start Graduate</div>
+            <div class="timeline-org">Amazon Web Services · Kathmandu</div>
+            <div class="timeline-body">
+              <ul>
+                <li>Mastered EC2, S3, RDS, VPC, and core AWS security services.</li>
+		<li>AWS security best practices, IAM policies, and compliance frameworks</li>
+                <li>Designed solutions following the AWS Well-Architected Framework.</li>
+                <li>Earned AWS Cloud Practitioner certification with full attendance.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div>
+        <div class="timeline-section-label">Education</div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-period">2024 — Present</div>
+            <div class="timeline-role">MIT — Master in Information Technologies</div>
+            <div class="timeline-org">Amrit Campus, Tribhuvan University · Kathmandu</div>
+            <div class="timeline-body">
+              <ul>
+		 Research-oriented program focusing on advanced IT concepts, including:
+                <li>Cloud computing, virtualization, and advanced networking.</li>
+                <li>Data science, machine learning, and big data analytics.</li>
+                <li>Software development methodologies and project management.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-period">2019 — 2024</div>
+            <div class="timeline-role">B.Sc. CSIT</div>
+            <div class="timeline-org">Amrit Campus, Tribhuvan University · Kathmandu</div>
+            <div class="timeline-body">
+              <ul>
+		 Comprehensive study of computer science fundamentals and modern technologies with focus on:
+                <li>Computer Programming concepts and SDLC process</li>
+		<li>Network architecture and security protocols</li>
+		<li>Database management and system administration</li>
+                <li>Cloud computing and distributed systems.</li>
+                <li>Graduated with distinction — 81.36%.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="section-label">Contact</div>
+    <h2 class="section-title">Get in Touch</h2>
+    <p class="section-desc">Open to DevOps consulting, cloud architecture, job opportunities, and project collaborations.</p>
+
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="contact-card">
+          <div class="contact-icon"><i class="bi bi-geo-alt"></i></div>
+          <div>
+            <div class="contact-card-label">Location</div>
+            <div class="contact-card-value">Kathmandu, Nepal</div>
+            <div class="contact-card-sub">Available for remote work worldwide</div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon"><i class="bi bi-clock"></i></div>
+          <div>
+            <div class="contact-card-label">Working Hours</div>
+            <div class="contact-card-value">Mon–Fri, 9:00 AM – 6:00 PM NPT</div>
+            <div class="contact-card-sub">Flexible for different time zones</div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon"><i class="bi bi-envelope"></i></div>
+          <div>
+            <div class="contact-card-label">Email</div>
+            <div class="contact-card-value">mail@lokendrabhat.com.np</div>
+          </div>
+        </div>
+        <div class="contact-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14154.575066547072!2d85.31572643810843!3d27.71724568817365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19048d08c133%3A0x696e7a8dd659930b!2sKathmandu%2C%20Nepal!5e0!3m2!1sen!2sus!4v1676962140245!5m2!1sen!2sus"
+            frameborder="0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen title="Kathmandu Map"></iframe>
+        </div>
+      </div>
+
+      <div class="contact-form reveal">
+        <div id="form-loading" class="form-status">Sending your message…</div>
+        <div id="form-success" class="form-status">Message sent! I'll get back to you soon.</div>
+        <div id="form-error" class="form-status"></div>
+
+        <form id="contact-form" action="https://formspree.io/f/xgvwdzoa" method="POST" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="name">Your Name</label>
+              <input class="form-control" type="text" id="name" name="name" placeholder="Full name" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Email Address</label>
+              <input class="form-control" type="email" id="email" name="email" placeholder="abc@example.com" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="subject">Subject</label>
+            <input class="form-control" type="text" id="subject" name="subject" placeholder="How can I help?" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="purpose">Purpose</label>
+            <select class="form-control" id="purpose" name="purpose" required>
+              <option value="">Select purpose</option>
+              <option value="DevOps Consultation">DevOps Consultation</option>
+              <option value="Cloud Architecture">Cloud Architecture</option>
+              <option value="Job Opportunity">Job Opportunity</option>
+              <option value="Collaboration">Project Collaboration</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="message">Message</label>
+            <textarea class="form-control" id="message" name="message" placeholder="Tell me about your project or requirements…" required></textarea>
+          </div>
+
+          <div class="recaptcha-wrap">
+            <div class="g-recaptcha" data-sitekey="6Ld5gcErAAAAACY8vyO7cjqthM3mA1G0Zqr0kjmY" data-theme="dark"></div>
+          </div>
+
+          <button type="submit" class="form-submit"><i class="bi bi-send"></i>Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© <span id="year"></span> Lokendra Bhat · All rights reserved · Designed & built by Lokendra Bhat</p>
+  </footer>
+</main>
+
+<a href="#" id="scroll-top" aria-label="Scroll to top"><i class="bi bi-arrow-up"></i></a>
+
+<script>
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Mobile menu
+  const sidebar = document.getElementById('sidebar');
+  const toggle = document.getElementById('menu-toggle');
+  const overlay = document.getElementById('overlay');
+  toggle.addEventListener('click', () => {
+    sidebar.classList.toggle('open');
+    overlay.classList.toggle('active');
+  });
+  overlay.addEventListener('click', () => {
+    sidebar.classList.remove('open');
+    overlay.classList.remove('active');
+  });
+
+  // Active nav on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav ul li a');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navLinks.forEach(a => a.classList.remove('active'));
+        const link = document.querySelector(`nav a[href="#${e.target.id}"]`);
+        if (link) link.classList.add('active');
+      }
+    });
+  }, { threshold: 0.4 });
+  sections.forEach(s => observer.observe(s));
+
+  // Scroll top
+  const scrollTop = document.getElementById('scroll-top');
+  window.addEventListener('scroll', () => {
+    scrollTop.classList.toggle('visible', window.scrollY > 400);
+  });
+
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal, .timeline-item');
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.15 });
+  reveals.forEach(el => revealObs.observe(el));
+
+  // Skill bar animation
+  const skillObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.skill-fill').forEach((bar, i) => {
+          const w = parseFloat(bar.style.getPropertyValue('--w'));
+          setTimeout(() => {
+            bar.style.width = (w * 100) + '%';
+            bar.classList.add('animate');
+          }, i * 80);
         });
-        function displayError(thisForm, error) {
-          thisForm.querySelector(".error-message").innerHTML = error;
-          thisForm.querySelector(".error-message").classList.add("d-block");
-        }
-      })();
+        skillObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  const skillsList = document.getElementById('skills-list');
+  if (skillsList) skillObs.observe(skillsList);
 
-      // Array of neon colors
-      const neonColors = [
-        "rgba(0, 255, 255, 1)", // Cyan
-        "rgba(255, 0, 255, 1)", // Magenta
-        "rgba(0, 255, 0", // Green
-        "rgba(255, 255, 0", // Yellow
-      ];
+  // Skill fill uses width, not scaleX for simplicity
+  document.querySelectorAll('.skill-fill').forEach(bar => {
+    const w = parseFloat(bar.style.getPropertyValue('--w'));
+    bar.style.width = '0%';
+    bar.style.transition = 'width 1s cubic-bezier(0.4,0,0.2,1)';
+    bar.style.transform = 'none';
+  });
 
-      // Function to get a random neon color
-      function getRandomNeonColor() {
-        return neonColors[Math.floor(Math.random() * neonColors.length)];
+  // ── CV panel ──
+  const cvModal    = document.getElementById('cv-modal');
+  const cvBackdrop = document.getElementById('cv-backdrop');
+  const cvFrame    = document.getElementById('cv-frame');
+  const cvLoading  = document.getElementById('cv-loading');
+  const cvWarning  = document.getElementById('cv-file-warning');
+  const cvClose    = document.getElementById('cv-close');
+  let cvLoaded = false;
+
+  function openCV() {
+    if (!cvModal) return;
+    cvModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if (!cvLoaded) {
+      cvLoaded = true;
+      if (cvLoading) cvLoading.style.display = 'flex';
+      if (cvFrame)   cvFrame.style.visibility = 'hidden';
+
+      // Detect file:// — iframes are blocked by browsers in this context
+      if (window.location.protocol === 'file:') {
+        if (cvLoading) cvLoading.style.display = 'none';
+        if (cvWarning) cvWarning.style.display = 'flex';
+        return;
       }
 
-      document.addEventListener("mousemove", (e) => {
-        const trail = document.createElement("div");
-        trail.className = "trail";
+      cvFrame.src = 'cv.html';
+      cvFrame.onload = () => {
+        if (cvLoading) cvLoading.style.display = 'none';
+        if (cvFrame)   cvFrame.style.visibility = 'visible';
+      };
+      cvFrame.onerror = () => {
+        if (cvLoading) cvLoading.style.display = 'none';
+        if (cvWarning) cvWarning.style.display = 'flex';
+      };
+    }
+  }
+  
+  function closeCV() {
+    if (!cvModal) return;
+    cvModal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
 
-        // Apply random neon color
-        const color = getRandomNeonColor();
-        trail.style.background = color;
-        trail.style.boxShadow = `0 0 8px ${color}, 
-                             0 0 15px ${color}, 
-                             0 0 25px ${color}`;
+  if (cvModal) {
+    document.getElementById('cv-btn').addEventListener('click', openCV);
+    document.getElementById('hero-cv-btn').addEventListener('click', openCV);
+    if (cvClose)    cvClose.addEventListener('click', closeCV);
+    if (cvBackdrop) cvBackdrop.addEventListener('click', closeCV);
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && cvModal.classList.contains('open')) closeCV();
+    });
+  }
 
-        // Position the trail at cursor location
-        trail.style.left = `${e.pageX}px`;
-        trail.style.top = `${e.pageY}px`;
 
-        // Append the trail and remove after animation
-        document.body.appendChild(trail);
-        setTimeout(() => trail.remove(), 500);
+
+  // Form submission
+  const form = document.getElementById('contact-form');
+  const loading = document.getElementById('form-loading');
+  const success = document.getElementById('form-success');
+  const error = document.getElementById('form-error');
+
+  function hideAll() {
+    [loading, success, error].forEach(el => el.style.display = 'none');
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (typeof grecaptcha !== 'undefined' && !grecaptcha.getResponse()) {
+      hideAll();
+      error.textContent = 'Please complete the CAPTCHA verification.';
+      error.style.display = 'block';
+      return;
+    }
+    hideAll();
+    loading.style.display = 'block';
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
       });
-    </script>
-  </body>
+      hideAll();
+      if (res.ok) {
+        success.style.display = 'block';
+        form.reset();
+        if (typeof grecaptcha !== 'undefined') grecaptcha.reset();
+      } else {
+        error.textContent = 'Something went wrong. Please try again.';
+        error.style.display = 'block';
+      }
+    } catch {
+      hideAll();
+      error.textContent = 'Network error. Please try again later.';
+      error.style.display = 'block';
+    }
+  });
+</script>
+
+</body>
 </html>
